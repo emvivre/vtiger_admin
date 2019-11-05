@@ -31,9 +31,9 @@ import vtiger
 import sys
 import json
 
-VTIGER_ENPOINT = 'http://localhost/emvivre/vtigercrm/webservice.php'
+VTIGER_ENPOINT = 'http://<VTIGER_URL>/vtigercrm/webservice.php'
 VTIGER_USERNAME = 'admin'
-VTIGER_ACCESSKEY = 'xND4DIvOivgtxVrg'
+VTIGER_ACCESSKEY = '<YOUR_ACCESS_KEY>'
 
 if len(sys.argv) < 2:
     print('''Usage: %(scriptname)s -c <CMD> [<OPTIONS>]
