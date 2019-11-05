@@ -9,7 +9,7 @@ Available features are the following :
  - list fields associated to a type name
 
 The project contains 2 files : 
- - ```vtiger.py``` : provide an API to interact with Vtiger CRM : you can use it in your own project
+ - ```vtiger.py``` : provide an API to interact with Vtiger CRM : you can use it in your own project.
  - ```vtiger_admin.py``` : Vtiger Admin script to manage Vtiger CRM in command line.
 
 The first step is to configure credentials information, see the beginning of ```vtiger_admin.py``` : 
@@ -146,4 +146,14 @@ $ python3 vtiger_admin.py -c export -t ModComments
     "id": "31x18"
   }
 ]
+```
+
+Remarks:
+- During the create operation step, if the ```assigned_user_id``` is required and has not be given in the input of Vtiger Admin, then the ```id``` associated to the current connected user is used. So the following command works even the ```assigned_user_id``` field has not be given :
+```
+python3 vtiger_admin.py -c create -t Accounts -d '{"accountname":"CompanyTest2","website":"https://companytest2.com"}'
+```
+- When adding a contact record, the link to an account (company) can be perform just by putting a ```accountname``` field (the company name). The ```account_id``` associated to the ```accountname``` will be set automatically. See : 
+```
+python3 vtiger_admin.py -c create -t Accounts -d '{"firstname":"TestFirstName","lastname":"TestLastName","accountname":"PrettyCompany"}'
 ```
