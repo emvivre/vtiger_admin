@@ -8,6 +8,17 @@ Available features are the following :
  - list available types (categories)
  - list fields associated to a type name
 
+The project contains 2 files : 
+ - ```vtiger.py``` : provide an API to interact with Vtiger CRM : you can use it in your own project
+ - ```vtiger_admin.py``` : Vtiger Admin script to manage Vtiger CRM in command line.
+
+The first step is to configure credentials information, see the beginning of ```vtiger_admin.py``` : 
+```
+VTIGER_ENPOINT = 'http://<VTIGER_URL>/vtigercrm/webservice.php'
+VTIGER_USERNAME = 'admin'
+VTIGER_ACCESSKEY = '<YOUR_ACCESS_KEY>'
+```
+
 To display the help message: 
 ```
 $ python3 vtiger_admin.py 
